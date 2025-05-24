@@ -63,18 +63,10 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				coffee: {
-					50: '#fdf9f3',
-					100: '#f8ede0',
-					200: '#f0d9bf',
-					300: '#e6be94',
-					400: '#d99f67',
-					500: '#d08344',
-					600: '#c26d39',
-					700: '#a15531',
-					800: '#82442e',
-					900: '#6b3a28',
-					950: '#391d14'
+				brand: {
+					primary: '#DF6E2B',
+					light: '#F5A623',
+					dark: '#B85A1F'
 				}
 			},
 			borderRadius: {
