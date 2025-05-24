@@ -6,27 +6,22 @@ const PartnersCarousel = () => {
     {
       name: 'Vetner',
       description: 'Cuidados Pet',
-      logo: 'https://vetner.com.br/assets/logo-vetner.png',
+      logo: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=200&h=100&fit=crop',
     },
     {
       name: 'Indooh',
       description: 'Mídia em Transporte',
-      logo: 'https://indooh.com.br/assets/logo.png',
+      logo: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=200&h=100&fit=crop',
     },
     {
       name: 'Prêmio da Música Capixaba',
       description: 'Cultura e Música',
-      logo: 'https://www.premiodamusicacapixaba.com.br/assets/logo.png',
+      logo: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=200&h=100&fit=crop',
     },
     {
       name: 'UTI dos Games',
       description: 'Gaming e Tecnologia',
-      logo: 'https://utidosgames.com.br/assets/logo.png',
-    },
-    {
-      name: 'GB Projeto 3D',
-      description: 'Modelagem 3D',
-      logo: 'https://gb-projeto-3d.vercel.app/assets/logo.png',
+      logo: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=200&h=100&fit=crop',
     },
     {
       name: 'Prefeituras',
