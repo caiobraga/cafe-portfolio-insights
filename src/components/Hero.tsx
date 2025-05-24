@@ -8,9 +8,11 @@ const Hero = () => {
       <div className="container mx-auto px-6">
         <div className="text-center max-w-4xl mx-auto">
           <div className="flex justify-center mb-8">
-            <div className="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-coffee-600 to-coffee-700 rounded-full shadow-2xl">
-              <Coffee className="h-10 w-10 text-white" />
-            </div>
+            <img 
+              src="/lovable-uploads/4010b2cc-159a-4035-bfae-425e886b0da9.png" 
+              alt="Código com Café" 
+              className="w-20 h-20 shadow-2xl rounded-full"
+            />
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-coffee-900 mb-6 animate-fade-in">

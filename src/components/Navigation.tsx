@@ -1,7 +1,6 @@
 
 import { useState } from 'react';
 import { Coffee, Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,9 +19,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-coffee-600 to-coffee-700 rounded-xl shadow-lg">
-              <Coffee className="h-6 w-6 text-white" />
-            </div>
+            <img 
+              src="/lovable-uploads/4010b2cc-159a-4035-bfae-425e886b0da9.png" 
+              alt="Código com Café" 
+              className="w-10 h-10"
+            />
             <span className="text-xl font-bold text-coffee-900">
               Código com Café
             </span>
@@ -42,18 +43,9 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* CTA Button Desktop */}
-          <div className="hidden md:block">
-            <Button className="bg-coffee-600 hover:bg-coffee-700 text-white shadow-lg">
-              Iniciar Projeto
-            </Button>
-          </div>
-
           {/* Menu Mobile Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
+          <button
+            className="md:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
@@ -61,7 +53,7 @@ const Navigation = () => {
             ) : (
               <Menu className="h-6 w-6 text-coffee-700" />
             )}
-          </Button>
+          </button>
         </div>
 
         {/* Menu Mobile */}
@@ -78,9 +70,6 @@ const Navigation = () => {
                   {item.label}
                 </a>
               ))}
-              <Button className="bg-coffee-600 hover:bg-coffee-700 text-white mt-4">
-                Iniciar Projeto
-              </Button>
             </div>
           </div>
         )}
