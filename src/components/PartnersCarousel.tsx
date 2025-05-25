@@ -1,5 +1,7 @@
 
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { useEffect } from 'react';
+import type { EmblaCarouselType } from 'embla-carousel';
 
 const PartnersCarousel = () => {
   const partners = [
@@ -30,6 +32,44 @@ const PartnersCarousel = () => {
     },
   ];
 
+  const createAutoplayPlugin = () => {
+    return {
+      name: 'autoplay',
+      options: { active: true, breakpoints: {} },
+      init: (embla: EmblaCarouselType) => {
+        let interval: NodeJS.Timeout;
+        
+        const autoplay = () => {
+          if (embla.canScrollNext()) {
+            embla.scrollNext();
+          } else {
+            embla.scrollTo(0);
+          }
+        };
+        
+        const startAutoplay = () => {
+          interval = setInterval(autoplay, 3000);
+        };
+        
+        const stopAutoplay = () => {
+          if (interval) clearInterval(interval);
+        };
+        
+        embla.on('pointerDown', stopAutoplay);
+        embla.on('pointerUp', startAutoplay);
+        
+        startAutoplay();
+        
+        return () => {
+          stopAutoplay();
+        };
+      },
+      destroy: () => {
+        // Cleanup is handled in the init return function
+      }
+    };
+  };
+
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-6">
@@ -39,25 +79,7 @@ const PartnersCarousel = () => {
             loop: true,
           }}
           className="w-full max-w-5xl mx-auto"
-          plugins={[
-            {
-              init: (embla) => {
-                const autoplay = () => {
-                  if (embla.canScrollNext()) {
-                    embla.scrollNext();
-                  } else {
-                    embla.scrollTo(0);
-                  }
-                };
-                
-                const interval = setInterval(autoplay, 3000);
-                
-                embla.on('destroy', () => {
-                  clearInterval(interval);
-                });
-              }
-            }
-          ]}
+          plugins={[createAutoplayPlugin()]}
         >
           <CarouselContent className="-ml-2 md:-ml-4">
             {partners.map((partner, index) => (
