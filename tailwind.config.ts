@@ -67,6 +67,18 @@ export default {
 					primary: '#DF6E2B',
 					light: '#F5A623',
 					dark: '#B85A1F'
+				},
+				coffee: {
+					50: '#fdf8f3',
+					100: '#faeee0',
+					200: '#f4d9bf',
+					300: '#ebbf94',
+					400: '#df9f66',
+					500: '#d68344',
+					600: '#c86e39',
+					700: '#a65831',
+					800: '#85472e',
+					900: '#6b3c27'
 				}
 			},
 			borderRadius: {
