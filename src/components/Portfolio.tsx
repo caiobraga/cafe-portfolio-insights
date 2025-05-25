@@ -120,20 +120,12 @@ const Portfolio = () => {
           <p className="text-lg text-gray-700 mb-8">
             Interessado em ver mais projetos ou iniciar o seu?
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="bg-[#DF6E2B] hover:bg-[#c5611f] text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              Ver Todos os Projetos
-            </button>
-            <button 
-              onClick={scrollToContact}
-              className="border-2 border-[#DF6E2B] text-[#DF6E2B] hover:bg-orange-50 px-8 py-4 rounded-lg font-semibold transition-all duration-300"
-            >
-              Solicitar Orçamento
-            </button>
-          </div>
+          <button 
+            onClick={scrollToContact}
+            className="bg-[#DF6E2B] hover:bg-[#c5611f] text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            Solicitar Orçamento
+          </button>
         </div>
       </div>
     </section>
