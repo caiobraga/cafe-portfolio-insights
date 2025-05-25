@@ -1,4 +1,3 @@
-
 import { Code, Palette, Smartphone, Globe, Database, Shield } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -41,6 +40,13 @@ const Services = () => {
       features: ["Arquitetura", "Code Review", "Performance", "Segurança"]
     }
   ];
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section className="py-20 bg-white">
@@ -91,7 +97,10 @@ const Services = () => {
           <p className="text-xl mb-8 opacity-90">
             Cada negócio é único. Desenvolvemos soluções sob medida para suas necessidades específicas.
           </p>
-          <button className="bg-white text-[#DF6E2B] px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-300 shadow-lg hover:shadow-xl">
+          <button 
+            onClick={scrollToContact}
+            className="bg-white text-[#DF6E2B] px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
             Falar com Especialista
           </button>
         </div>

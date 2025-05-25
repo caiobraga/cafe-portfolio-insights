@@ -1,8 +1,21 @@
-
 import { Coffee, Code, Palette, Rocket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
+  const scrollToPortfolio = () => {
+    const portfolioSection = document.getElementById('portfolio');
+    if (portfolioSection) {
+      portfolioSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="min-h-screen bg-gradient-to-br from-orange-50 via-orange-100 to-orange-200 flex items-center">
       <div className="container mx-auto px-6">
@@ -42,12 +55,14 @@ const Hero = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
             <Button 
+              onClick={scrollToPortfolio}
               size="lg" 
               className="bg-[#DF6E2B] hover:bg-[#c5611f] text-white px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
             >
               Ver Projetos
             </Button>
             <Button 
+              onClick={scrollToContact}
               variant="outline" 
               size="lg"
               className="border-[#DF6E2B] text-[#DF6E2B] hover:bg-orange-50 px-8 py-4 text-lg font-semibold shadow-lg"

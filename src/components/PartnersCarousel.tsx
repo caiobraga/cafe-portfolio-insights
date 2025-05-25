@@ -1,4 +1,3 @@
-
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { useEffect } from 'react';
 import type { EmblaCarouselType } from 'embla-carousel';
@@ -36,7 +35,7 @@ const PartnersCarousel = () => {
     return {
       name: 'autoplay',
       options: { active: true, breakpoints: {} },
-      init: (embla: EmblaCarouselType) => {
+      init: (embla: any) => {
         let interval: NodeJS.Timeout;
         
         const autoplay = () => {

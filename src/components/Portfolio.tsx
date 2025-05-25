@@ -1,4 +1,3 @@
-
 import ProjectCard from './ProjectCard';
 
 const Portfolio = () => {
@@ -91,6 +90,13 @@ const Portfolio = () => {
     }
   ];
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="py-20 bg-gradient-to-br from-orange-50 via-orange-100 to-orange-200">
       <div className="container mx-auto px-6">
@@ -115,10 +121,16 @@ const Portfolio = () => {
             Interessado em ver mais projetos ou iniciar o seu?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-[#DF6E2B] hover:bg-[#c5611f] text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+            <button 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="bg-[#DF6E2B] hover:bg-[#c5611f] text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            >
               Ver Todos os Projetos
             </button>
-            <button className="border-2 border-[#DF6E2B] text-[#DF6E2B] hover:bg-orange-50 px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+            <button 
+              onClick={scrollToContact}
+              className="border-2 border-[#DF6E2B] text-[#DF6E2B] hover:bg-orange-50 px-8 py-4 rounded-lg font-semibold transition-all duration-300"
+            >
               Solicitar Orçamento
             </button>
           </div>
