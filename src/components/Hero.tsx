@@ -1,3 +1,4 @@
+
 import { Coffee, Code, Palette, Rocket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -24,7 +25,7 @@ const Hero = () => {
             <img 
               src="/lovable-uploads/4010b2cc-159a-4035-bfae-425e886b0da9.png" 
               alt="Código com Café" 
-              className="w-20 h-20 object-contain"
+              className="w-20 h-20 object-contain rounded-full"
             />
           </div>
           
