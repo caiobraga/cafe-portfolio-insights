@@ -1,5 +1,5 @@
 
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 
 const PartnersCarousel = () => {
   const partners = [
@@ -33,21 +33,31 @@ const PartnersCarousel = () => {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Empresas que Confiam em Nós
-          </h2>
-          <p className="text-gray-700 max-w-2xl mx-auto">
-            Temos o orgulho de trabalhar com empresas inovadoras que compartilham nossa paixão por tecnologia
-          </p>
-        </div>
-        
         <Carousel
           opts={{
             align: "start",
             loop: true,
           }}
           className="w-full max-w-5xl mx-auto"
+          plugins={[
+            {
+              init: (embla) => {
+                const autoplay = () => {
+                  if (embla.canScrollNext()) {
+                    embla.scrollNext();
+                  } else {
+                    embla.scrollTo(0);
+                  }
+                };
+                
+                const interval = setInterval(autoplay, 3000);
+                
+                embla.on('destroy', () => {
+                  clearInterval(interval);
+                });
+              }
+            }
+          ]}
         >
           <CarouselContent className="-ml-2 md:-ml-4">
             {partners.map((partner, index) => (
@@ -74,8 +84,6 @@ const PartnersCarousel = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden md:flex" />
-          <CarouselNext className="hidden md:flex" />
         </Carousel>
       </div>
     </section>
