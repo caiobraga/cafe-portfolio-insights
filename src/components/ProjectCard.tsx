@@ -1,8 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, Calendar } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 
 interface ProjectCardProps {
   title: string;
@@ -21,8 +20,6 @@ const ProjectCard = ({
   technologies, 
   status, 
   date, 
-  githubUrl, 
-  liveUrl,
   image 
 }: ProjectCardProps) => {
   const statusColors = {
@@ -61,7 +58,7 @@ const ProjectCard = ({
       <CardContent className="pt-0">
         <p className="text-gray-700 text-sm mb-4 line-clamp-3">{description}</p>
         
-        <div className="flex flex-wrap gap-1 mb-4">
+        <div className="flex flex-wrap gap-1">
           {technologies.map((tech, index) => (
             <Badge 
               key={index} 
@@ -71,30 +68,6 @@ const ProjectCard = ({
               {tech}
             </Badge>
           ))}
-        </div>
-        
-        <div className="flex gap-2">
-          {githubUrl && (
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="flex-1 border-orange-300 text-gray-700 hover:bg-orange-50"
-              onClick={() => window.open(githubUrl, '_blank')}
-            >
-              <Github className="h-4 w-4 mr-1" />
-              GitHub
-            </Button>
-          )}
-          {liveUrl && (
-            <Button 
-              size="sm" 
-              className="flex-1 bg-[#DF6E2B] hover:bg-[#c5611f] text-white"
-              onClick={() => window.open(liveUrl, '_blank')}
-            >
-              <ExternalLink className="h-4 w-4 mr-1" />
-              Ver Projeto
-            </Button>
-          )}
         </div>
       </CardContent>
     </Card>
